@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://axingde.github.io/2020/11/23/hello-world/</loc>
-    
-    <lastmod>2020-11-23T10:31:41.742Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://axingde.github.io/2020/11/23/udf%25E6%258F%2590%25E6%259D%2583/</loc>
     
     <lastmod>2020-11-23T10:07:01.111Z</lastmod>
@@ -145,6 +138,13 @@
     <loc>https://axingde.github.io/categories/index.html</loc>
     
     <lastmod>2020-09-27T12:45:37.539Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://axingde.github.io/2020/11/23/hello-world/</loc>
+    
+    <lastmod>2020-09-27T09:45:35.023Z</lastmod>
     
   </url>
   
