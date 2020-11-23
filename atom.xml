@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://axingde.github.io/"/>
-  <updated>2020-11-23T10:39:00.464Z</updated>
+  <updated>2020-11-23T10:31:41.742Z</updated>
   <id>https://axingde.github.io/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://axingde.github.io/2020/11/23/test/"/>
-    <id>https://axingde.github.io/2020/11/23/test/</id>
-    <published>2020-11-23T10:39:00.000Z</published>
-    <updated>2020-11-23T10:39:00.464Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
