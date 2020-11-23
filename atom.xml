@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://axingde.github.io/"/>
-  <updated>2020-09-27T09:45:35.023Z</updated>
+  <updated>2020-11-23T11:15:02.991Z</updated>
   <id>https://axingde.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>windows日常</title>
+    <link href="https://axingde.github.io/2020/11/23/windows%E6%97%A5%E5%B8%B8/"/>
+    <id>https://axingde.github.io/2020/11/23/windows日常/</id>
+    <published>2020-11-23T11:04:28.000Z</published>
+    <updated>2020-11-23T11:15:02.991Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1.创建用户时提示密码不满足要求解决方法</strong></p><p>win+r 打开运行窗口后输入gpedit.msc</p><p>找到此位置</p><p><img src="https://i.loli.net/2020/11/23/OJqTzxWLpGfa9DK.jpg" alt="img"></p><p>把启用改为禁用即可</p><p><strong>2.查看widows日志</strong></p><p>打开计算机管理（运行窗口输入compmgmnt.msc 或右键我的电脑选择管理）</p><p><img src="https://i.loli.net/2020/11/23/RZwG2ETa1QiFbjh.png" alt="image-20201123190604466"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;1.创建用户时提示密码不满足要求解决方法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;win+r 打开运行窗口后输入gpedit.msc&lt;/p&gt;
+&lt;p&gt;找到此位置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/11/23/OJqTzx
+      
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://axingde.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Windows" scheme="https://axingde.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
