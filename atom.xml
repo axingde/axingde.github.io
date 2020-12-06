@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://axingde.github.io/"/>
-  <updated>2020-11-23T11:15:02.991Z</updated>
+  <updated>2020-12-06T12:39:58.945Z</updated>
   <id>https://axingde.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AntSword安装</title>
+    <link href="https://axingde.github.io/2020/12/06/AntSword%E5%AE%89%E8%A3%85/"/>
+    <id>https://axingde.github.io/2020/12/06/AntSword安装/</id>
+    <published>2020-12-06T12:25:59.000Z</published>
+    <updated>2020-12-06T12:39:58.945Z</updated>
+    
+    <content type="html"><![CDATA[<p>一剑在手，纵横无忧！</p><p>前言：</p><p><strong>中国蚁剑是一款开源的跨平台网站管理工具，它主要面向于合法授权的渗透测试安全人员以及进行常规操作的网站管理员。</strong></p><p>中国蚁剑推崇模块化的开发思想，遵循<strong>开源，就要开得漂亮</strong>的原则，致力于为不同层次的人群提供最简单易懂、方便直接的代码展示及其修改说明，努力让大家可以一起为这个项目贡献出力所能及的点滴，让这款工具真正能让大家用得顺心、舒适，让它能为大家施展出最人性化最适合你的能力！</p><p>获取蚁剑</p><p>1.下载蚁剑加载器</p><p>2.下载蚁剑源代码</p><p>3.解压缩蚁剑加速器并 打开antsowrd.exe</p><p><img src="https://i.loli.net/2020/12/06/4x3VFodi6vQqjHp.png" alt="image-20201206203434480"></p><p><img src="https://i.loli.net/2020/12/06/7YDZmPwTgLAQMIv.png" alt="image-20201206203503428"></p><p>4.点击初始化，会让你选择文件夹，这时解压AntSword源代码，并选择解压后的文件夹</p><p>5.等初始化完成后，在双击”AntSword.exe” 即可正常启动。</p><p><img src="https://i.loli.net/2020/12/06/mDZeETwt5SfYL8n.png" alt="image-20201206203906748"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一剑在手，纵横无忧！&lt;/p&gt;
+&lt;p&gt;前言：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;中国蚁剑是一款开源的跨平台网站管理工具，它主要面向于合法授权的渗透测试安全人员以及进行常规操作的网站管理员。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;中国蚁剑推崇模块化的开发思想，遵循&lt;strong&gt;开源，就
+      
+    
+    </summary>
+    
+      <category term="网络安全" scheme="https://axingde.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="蚁剑" scheme="https://axingde.github.io/tags/%E8%9A%81%E5%89%91/"/>
+    
+  </entry>
   
   <entry>
     <title>windows日常</title>
@@ -59,20 +87,6 @@
       
         &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for
       
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>udf提权</title>
-    <link href="https://axingde.github.io/2020/11/23/udf%E6%8F%90%E6%9D%83/"/>
-    <id>https://axingde.github.io/2020/11/23/udf提权/</id>
-    <published>2020-11-23T10:07:01.000Z</published>
-    <updated>2020-11-23T10:07:01.111Z</updated>
-    
-    <summary type="html">
     
     </summary>
     
