@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://axingde.github.io/"/>
-  <updated>2021-05-15T13:02:26.467Z</updated>
+  <updated>2021-05-15T13:20:27.154Z</updated>
   <id>https://axingde.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chrome 0day复现</title>
+    <link href="https://axingde.github.io/2021/05/15/chrome-0day%E5%A4%8D%E7%8E%B0/"/>
+    <id>https://axingde.github.io/2021/05/15/chrome-0day复现/</id>
+    <published>2021-05-15T13:17:24.000Z</published>
+    <updated>2021-05-15T13:20:27.154Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="复现chrome-0day"><a href="#复现chrome-0day" class="headerlink" title="复现chrome 0day"></a>复现chrome 0day</h1><p>测试版本： 88.0.4324.182 (正式版本) （64 位） (cohort: Stable)</p><p>影响版本：Chrome 89.0.4389.114 及以下版本，使用Chrome内核的其他浏览器，也会受到漏洞影响。</p><p>下载poc</p><p><a href="https://github.com/r4j0x00/exploits/tree/master/chrome-0day">https://github.com/r4j0x00/exploits/tree/master/chrome-0day</a></p><p>漏洞需要关闭chrome浏览器的沙盒</p><p>点击右键快捷方式，点击属性，在目标位置处输入 -no-sandbox 点击确定</p><p><img src="chrome-0day复现.assets/wps12.png" alt="img"><img src="chrome-0day复现.assets/wps13.png" alt="img"><img src="https://i.loli.net/2021/05/15/24O8tRGEhyzUaqv.jpg" alt="img"></p><p>使用谷歌浏览器打开poc</p><p><img src="https://i.loli.net/2021/05/15/Qw6iWhx84JVpvn7.jpg" alt="img"> </p><p><img src="chrome-0day复现.assets/wps16.png" alt="img"></p><p>谷歌浏览器自身是默认开启沙盒模式，除非结合沙盒逃逸，否则此漏洞利用性不高，chrome浏览器更新到 90.0.4430.72 后修复了此漏洞，但此版本存在了另一个漏洞，影响基于chromium内核的Microsoft Edge（89.0.774.77）一下版本、</p><p><strong>漏洞复现</strong></p><p>测试版本：90.0.4430.72</p><p>POC地址：<a href="https://github.com/avboy1337/1195777-chrome0day">https://github.com/avboy1337/1195777-chrome0day</a></p><p>漏洞需要关闭chrome浏览器的沙盒</p><p>点击右键快捷方式，点击属性，在目标位置处输入 -no-sandbox 点击确定，打开谷歌浏览器访问poc网页</p><p><img src="https://i.loli.net/2021/05/15/p7jMxzRqD6tS94d.jpg" alt="img"> </p><p><strong>使用此方法当访问网页时上线cs</strong></p><p>把poc中的shellcode修改为cs的马</p><p><img src="https://i.loli.net/2021/05/15/tsyDiwXU69qpnzV.jpg" alt="img"> </p><p><img src="https://i.loli.net/2021/05/15/PuqCAoYLWFdDref.jpg" alt="img"> </p><p>生成的.c问价把内容中的\换成,0</p><p><img src="https://i.loli.net/2021/05/15/fu6PmK1TZFk84DX.jpg" alt="img"> </p><p>把shellcode的内容替换成刚刚.c文件的内容</p><p><img src="https://i.loli.net/2021/05/15/c5kWnulYS8o2h4g.jpg" alt="img"> </p><p>浏览器访问网页，cs上线</p><p><img src="https://i.loli.net/2021/05/15/ON5qbR2nBkhVGiS.jpg" alt="img"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;复现chrome-0day&quot;&gt;&lt;a href=&quot;#复现chrome-0day&quot; class=&quot;headerlink&quot; title=&quot;复现chrome 0day&quot;&gt;&lt;/a&gt;复现chrome 0day&lt;/h1&gt;&lt;p&gt;测试版本： 88.0.4324.182 (正式版本)
+      
+    
+    </summary>
+    
+      <category term="漏洞复现" scheme="https://axingde.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+    
+      <category term="chrome" scheme="https://axingde.github.io/tags/chrome/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo使用SSH连接GitHub</title>
